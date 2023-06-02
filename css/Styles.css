@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Comfortaa', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  cursor: url("../img/Pointer5.png"), auto !important;
+}
+
+
+#cont-general {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/fondo-2.png);
+  background-size: cover;
+  background-position-y: bottom;
+  overflow: hidden;
+  position: relative;
+}
+
+#cont-general::before {
+  width: 143px;
+  height: 377px;
+  content: "";
+  position: absolute;
+  left: 35%;
+  bottom: 60px;
+  background: url(../img/person.png);
+  background-size: cover;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.cont-carousel {
+  width: 110%;
+  position: relative;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  top: -27px;
+}
+
+/* carousel */
+.carousel {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  animation-name: leftAnimation;
+  animation-duration: 2s;
+}
+
+.carousel .pagination {
+  text-align: right;
+  padding-right: 400px;
+  display: none;
+}
+
+
+.carousel-items {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.5s ease-in-out;
+}
+
+.item {
+  width: 465px;
+  height: 422px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 10px;
+  margin: 40px 1%;
+  position: relative;
+  transition: .3s;
+}
+
+.item:hover {
+  transform: translateY(-30px);
+
+}
+
+.item p {
+  font-size: 45px;
+  text-align: left;
+  position: absolute;
+  left: 20px;
+  bottom: 90px;
+  font-weight: 300;
+  font-weight: 400;
+}
+
+.item:nth-child(1) {
+  background: url("../img/item1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(2) {
+  background: url("../img/item2.1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(3) {
+  background: url("../img/item3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(4) {
+  background: url("../img/item4.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(5) {
+  background: url("../img/item1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(6) {
+  background: url("../img/item2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(7) {
+  background: url("../img/item3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item:nth-child(8) {
+  background: url("../img/item4.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.active {
+  background-color: #333;
+}
+
+
+
+.cont-carousel-fondo {
+  background: url("../img/bg2.png");
+  background-size: cover;
+  background-position-y: bottom;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.cont-carousel-fondo .transition-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#carousel-fondo {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#carousel-fondo.item4Bg {
+  background: url("../img/bg4.png");
+  background-size: cover;
+  background-position-y: bottom;
+  opacity: 0;
+  transform: scale(3);
+  /* Inicialmente, la imagen está escalada y rotada */
+
+  /* Definir la animación */
+  animation: fade-in 1s forwards, scale-in 1s forwards;
+}
+
+
+
+
+#carousel-fondo.item3Bg {
+  background: url("../img/bg3.png");
+  background-size: cover;
+  background-position-y: bottom;
+  opacity: 0;
+  transform: scale(3);
+  /* Inicialmente, la imagen está escalada y rotada */
+
+  /* Definir la animación */
+  animation: fade-in 1s forwards, scale-in 1s forwards;
+}
+
+
+
+#carousel-fondo.item2Bg {
+  background: url("../img/bg1.png");
+  background-size: cover;
+  background-position-y: bottom;
+  opacity: 0;
+  transform: scale(3);
+  /* Inicialmente, la imagen está escalada y rotada */
+
+  /* Definir la animación */
+  animation: fade-in 1s forwards, scale-in 1s forwards;
+}
+
+#carousel-fondo.item1Bg {
+  background: url("../img/bg2.png");
+  background-size: cover;
+  background-position-y: bottom;
+  opacity: 0;
+  transform: scale(3);
+  /* Inicialmente, la imagen está escalada y rotada */
+
+  /* Definir la animación */
+  animation: fade-in 1s forwards, scale-in 1s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(2.5);
+    /* Al inicio de la animación, la imagen está escalada y rotada */
+  }
+
+  100% {
+    transform: scale(1);
+    /* Al final de la animación, la imagen vuelve a su escala y rotación original */
+  }
+}
+
+
+#item1.hide,
+#item2.hide,
+#item3.hide,
+#item4.hide {
+  animation: opacity .3s forwards;
+  opacity: 1;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+    /* Al inicio de la animación, la imagen está escalada y rotada */
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+    /* Al final de la animación, la imagen vuelve a su escala y rotación original */
+  }
+}
+
+#item1.move4,
+#item2.move4,
+#item3.move4 {
+  transition: 1s;
+  transform: translateX(-10000px);
+}
+
+#item5.move4,
+#item6.move4,
+#item7.move4 {
+  transition: 1s;
+  transform: translateX(20000px);
+}
+
+
+#item1.move3,
+#item2.move3 {
+  transition: 1s;
+  transform: translateX(-20000px);
+}
+
+#item4.move3,
+#item5.move3,
+#item6.move3,
+#item7.move3 {
+  transition: 1s;
+  transform: translateX(20000px);
+}
+
+#item1.move2 {
+  transition: 1s;
+  transform: translateX(-20000px);
+}
+
+#item3.move2,
+#item4.move2,
+#item5.move2,
+#item6.move2,
+#item7.move2 {
+  transition: 1s;
+  transform: translateX(20000px);
+}
+
+#item2.move1,
+#item3.move1,
+#item4.move1,
+#item5.move1,
+#item6.move1,
+#item7.move1 {
+  transition: 1s;
+  position: relative;
+  transform: translateX(20000px);
+}
+
+
+
+.infOculta {
+  position: absolute;
+  width: 1000px;
+  z-index: 999;
+  text-align: center;
+  left: -172px;
+  right: 0;
+  margin: 0 auto;
+
+  top: -300px;
+}
+
+.infOculta.active {
+  animation: fade-down 2s forwards;
+  background: transparent;
+}
+
+.infOculta h3 {
+  font-size: 80px;
+  font-weight: 900;
+  color: #fff;
+
+}
+
+.infOculta p {
+  font-size: 30px;
+  color: #fff;
+
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+
+  }
+
+  20% {
+    opacity: 0;
+
+  }
+
+  40% {
+    opacity: 0;
+
+  }
+
+  60% {
+    opacity: 0;
+
+  }
+
+  80% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+    top: 300px;
+  }
+}
+
+
+
+
+
+
+
+
+.hideBottom {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper .swiper-slide:nth-child(1) {
+  background: url("../img/bg2.png");
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.swiper .swiper-slide:nth-child(2) {
+  background: url("../img/bg1.png");
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.swiper .swiper-slide:nth-child(3) {
+  background: url("../img/bg3.png");
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+.swiper .swiper-slide:nth-child(4) {
+  background: url("../img/bg4.png");
+  background-size: cover;
+  background-position-y: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+  width: 100%;
+  position: relative;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+
+header .container-fluid {
+  max-width: 1600px;
+  width: 80%;
+  padding-top: 40px;
+
+}
+
+header .container-fluid nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 9999;
+}
+
+nav a.logo {
+  position: relative;
+  animation-name: topMenu;
+  animation-duration: 1s;
+  cursor: url("../img/Pointer5.png"), auto;
+}
+
+nav a.logo img {
+  width: 160px;
+}
+
+nav a.logo:hover {
+  transform: translateX(30px);
+}
+
+nav .menu-btn {
+  color: #466574;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: url("../img/Pointer5.png"), auto;
+  padding: 30px;
+  animation-name: topMenu;
+  animation-duration: 2.5s;
+}
+
+nav .menu-btn::before {
+  content: "";
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  background: #fff;
+  left: 0px;
+  top: -15px;
+  z-index: -2;
+  border-radius: 50%;
+  animation-name: ondass;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  box-shadow: 0 0 10px #fff;
+  animation-play-state: running;
+}
+
+nav .menu-btn::after {
+  content: "";
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  background: #fff;
+  left: 15px;
+  top: 0px;
+  z-index: -1;
+  border-radius: 50%;
+  animation-name: ondas;
+  animation-duration: .9s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  box-shadow: 0px 0px 14px #78787851, 7px 0px 2px #ffffff00;
+}
+
+@keyframes ondas {
+  0% {
+    transform: scale(1.4);
+
+  }
+
+  100% {
+    transform: scale(1);
+
+  }
+}
+
+@keyframes ondass {
+  0% {
+    transform: scale(1);
+
+  }
+
+  100% {
+    transform: scale(1.1);
+
+  }
+}
+
+
+#menu-oculto {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../img/Bg\ 1.png");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  z-index: 999;
+  right: -100%;
+  padding-top: 130px;
+  transition: .8s;
+}
+
+#menu-oculto.active {
+  right: 0%;
+}
+
+#menu-oculto ul li {
+  list-style: none;
+  text-align: center;
+  margin: 40px 0;
+}
+
+#menu-oculto ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  cursor: url("../img/Pointer5.png"), auto;
+  transition: .4s;
+}
+
+#menu-oculto ul li a:hover {
+  text-shadow: 0 0 20px #fff;
+}
+
+#menu-oculto ul li a:before {
+  width: 0%;
+  height: 2px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: .4s;
+  box-shadow: 0 0 10px #fff;
+}
+
+#menu-oculto ul li a:hover:before {
+  width: 80%;
+  background: #fff;
+}
+
+
+footer {
+  max-width: 1600px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  color: #fff;
+  margin: 30px auto 0;
+  position: relative;
+}
+
+footer .left-footer {
+  width: 33.3%;
+  animation-name: bottomMenu;
+  position: relative;
+  animation-duration: 3s;
+  align-items: center;
+
+}
+
+footer .left-footer p {
+  display: flex;
+  align-items: center;
+}
+
+
+footer .left-footer p a:nth-child(1) {
+  margin-left: 14px;
+}
+
+footer .left-footer p a {
+  margin-left: 1px;
+  cursor: url("../img/Pointer5.png"), auto !important;
+  padding: 10px;
+}
+
+footer .left-footer p a img {
+  transition: .2s;
+  border: 1px solid transparent;
+}
+
+footer .left-footer p a:hover img {
+  border: 1px solid #fff;
+  transform: translateY(-10px) scale(1.1);
+}
+
+footer .center-footer {
+  display: flex;
+  width: 33.3%;
+  justify-content: center;
+  position: relative;
+  animation-name: bottomMenu;
+  animation-duration: 3.5s;
+}
+
+footer .center-footer .redes {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0 20px;
+  cursor: url("../img/Pointer5.png"), auto !important;
+  transition: .2s;
+}
+
+footer .center-footer .redes img {
+  transition: .2s;
+}
+
+footer .center-footer .redes:hover img,
+footer .right-footer a:hover {
+
+  transform: translateY(-10px)scale(1.1);
+}
+
+
+footer .right-footer {
+  display: flex;
+  width: 33.3%;
+  position: relative;
+  justify-content: center;
+  animation-name: bottomMenu;
+  align-items: center;
+}
+
+footer .right-footer a {
+  cursor: url("../img/Pointer5.png"), auto !important;
+  transition: .2s;
+  padding: 0 30px;
+}
+
+.whatsapp {
+  position: absolute;
+  right: 4%;
+  bottom: -26px;
+  cursor: url("../img/Pointer5.png"), auto !important;
+  animation-name: whatsapp;
+  animation-duration: 5s;
+  transition: .2s;
+  padding: 40px;
+}
+
+.whatsapp:hover {
+  transform: translateY(-15px) scale(1.1);
+}
+
+
+
+.cont-carousel .prev-button,
+.cont-carousel .next-button {
+  display: none;
+}
+
+
+nav a.logo {
+  position: relative;
+  transition: .5s;
+  animation-name: topMenu;
+  animation-duration: 1s !important;
+  cursor: url("../img/Pointer5.png"), auto;
+}
+
+
+nav a.logo:hover {
+  transform: scale(1.1);
+}
+
+nav .menu-btn {
+  color: #466574;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: url("../img/Pointer5.png"), auto;
+  padding: 30px;
+  animation-name: topMenu;
+  animation-duration: 1s !important;
+}
+
+
+@keyframes topMenu {
+
+  0% {
+    opacity: 0;
+    top: -120px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+
+
+@keyframes bottomMenu {
+
+  0% {
+    opacity: 0;
+    top: 120px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+footer .left-footer {
+  animation-duration: 1s !important;
+}
+
+footer .center-footer {
+  animation-duration: 1s !important;
+}
+
+footer .right-footer {
+  animation-duration: 1s !important;
+}
+
+.whatsapp {
+  animation-duration: 1s !important;
+}
+
+@keyframes whatsapp {
+
+  0% {
+    opacity: 0;
+    bottom: -100px;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: -26px;
+  }
+}
+
+
+@keyframes leftAnimation {
+
+  0% {
+    opacity: 0;
+    right: -20%;
+  }
+  40% {
+    opacity: 0;
+    right: -20%;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
